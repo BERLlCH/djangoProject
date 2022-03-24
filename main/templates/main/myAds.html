@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+  {% for el in ads %}
+      {% if el.user_id == userid %}
+        <div class="container_car">
+            <div class="photo"><img class="img_car" src="{{ el.img.url }}" alt="no"></div>
+                 <div class="info_car">
+                     <div class="header_car">{{ el.car_name }} {{ el.year }}</div>
+                     <div class="price">{{ el.price }}$</div>
+                     <div class="car_data">
+                            <ul class="table_car">
+                                 <li>
+                                     <img src="{% static 'main/img/icon_mileage.svg' %}" class="icon" alt="">
+                                     {{ el.mileage }} тис. км.
+                                </li>
+                                <li>
+                                    <img src="{% static 'main/img/icon_fuel.svg' %} " alt="" class="icon">
+                                    {{ el.volume }}
+                                </li>
+                                <li>
+                                    <img src="{% static 'main/img/icon_location.svg' %}" alt="" class="icon">
+                                    {{ el.city }}
+                                </li>
+                                <li>
+                                    <img src="{% static 'main/img/icon_akp.svg' %}" alt="" class="icon">
+                                    {{ el.transmission }}
+                                </li>
+                                <li><img src="{% static 'main/img/icon-phone.svg' %}" alt="" class="icon">
+                                    {{ el.number_of_phone }}
+                                </li>
+                            </ul>
+                     </div>
+        </div>
+        <div>
+            <p class="describe">{{ el.describe }}</p>
+        </div>
+    </div>
+      {% endif %}
+        {% endfor %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+<div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4" src="{% static 'main/img/sitelogo.png' %}" alt="" width="240" height="120">
+    <h1 class="display-5 fw-bold">Перша українська дошка оголошень України!</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Нам довіряє половина населення України. У іншої половини просто немає авто =)<br>
+      Кожен, у кого немає машини, мріє про її покупку, і кожен, у кого є автомобіль мріє його продати.<br>
+          Тож чого ти чекаєш, купляй або продавай з допомогою <b>CARSALE</b>!
+      </p>
+        {% if user.is_authenticated %}
+            <button type="button" class="btn btn-warning" style="margin-right: 10px"><a href="{% url 'newad' %}" class="nav-link px-2 text-white">Додати оголошення</a></button>
+        {% else %}
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+       <button type="button" class="btn btn-dark me-2"><a href="{% url 'login' %}" class="nav-link px-2 text-white">Вхід</a></button>
+          <button type="button" class="btn btn-warning"><a href="{% url 'register' %}" class="nav-link px-2 text-white">Реєстрація</a></button>
+      </div>
+        {% endif %}
+    </div>
+  </div>
+{% endblock %}

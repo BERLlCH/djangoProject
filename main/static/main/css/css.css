@@ -1,0 +1,9 @@
+.logo{
+    width: 120px;
+    height: auto;
+    margin-right: 100px;
+}
+
+.icon_mileage{
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg fill='none' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='7.5' cy='7.5' r='7' stroke='%23DB5C4C'/%3E%3Ccircle cx='7.5' cy='7.5' r='1' stroke='%23DB5C4C'/%3E%3Cpath d='m8.5 6.5 2-2' stroke='%23DB5C4C'/%3E%3Cpath d='m7.5 0.5v1.5m-7 5.5h1.5m12.5 0h-1.5m-10.5-5 1 1m9-1-1 1' stroke='%23DB5C4C'/%3E%3C/svg%3E%0A");
+}

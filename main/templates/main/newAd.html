@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <div>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        {{ form.car_name }}
+        {{ form.describe }}
+        {{ form.user_id }}
+        {{ form.year }}
+        {{ form.price }}
+        {{ form.city }}
+        {{ form.mileage }}
+        {{ form.volume }}
+        {{ form.drive }}
+        {{ form.color }}
+        {{ form.transmission }}
+        {{ form.number_of_phone }}
+        {{ form.img }}<br>
+    <button type="submit" class="btn btn-warning" style="margin-left: 10%; margin-top: 15px">Створити</button>
+        <span>{{ error }}</span>
+    </form>
+    </div>
+    {% else %}
+        <h1>Ви не авторизовані, авторизуйтесь будь-ласка!</h1>
+    {% endif %}
+    <div></div>
+
+{% endblock %}
