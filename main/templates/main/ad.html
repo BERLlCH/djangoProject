@@ -1,0 +1,43 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+    <main>
+        <div class="wrapper">
+        <div class="car-info">
+            <div class="left-bar">
+                <h1 class="carname">{{ ad.car_name }} {{ ad.car_model }} {{ ad.year }}</h1>
+                <p class="ad-price">{{ ad.price }}$</p>
+                <p class="altprice">{{ priceuah }}₴ • {{ priceeur }}€</p>
+                <ul class="car-description">
+                    <li>Місто: {{ ad.city }}</li>
+                    <li>Пробіг: {{ ad.mileage }} тис. км.</li>
+                    <li>Обєм двигуна: {{ ad.volume }}</li>
+                    <li>Коробка передач: {{ ad.transmission }} </li>
+                    <li>Привід: {{ ad.drive }}</li>
+                </ul>
+                <div class="contact-info">
+                    <p class="contact-title">Продавець</p>
+                    <p>{{ ad.user_name }}</p>
+                    <p class="contact-title">Контактний номер телефону</p>
+                    <p>{{ ad.number_of_phone }}</p>
+                </div>
+            </div>
+            <div class="right-bar">
+                <div class="img-container">
+                    <img src="{{ ad.img.url }}" class="car_img">
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="section-background">
+            <div class="wrapper">
+                  <div class="description">
+                    <p class="description-main">Опис від продавця</p>
+                    <p class="description-text">{{ ad.describe }}</p>
+                  </div>
+            </div>
+        </div>
+    </main>
+
+
+{% endblock %}

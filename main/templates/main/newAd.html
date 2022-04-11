@@ -5,6 +5,7 @@
     <div>
     <form method="post" enctype="multipart/form-data">{% csrf_token %}
         {{ form.car_name }}
+        {{ form.car_model }}
         {{ form.describe }}
         {{ form.user_id }}
         {{ form.year }}
@@ -16,7 +17,8 @@
         {{ form.color }}
         {{ form.transmission }}
         {{ form.number_of_phone }}
-        {{ form.img }}<br>
+        {{ form.img }}
+        <br>
     <button type="submit" class="btn btn-warning" style="margin-left: 10%; margin-top: 15px">Створити</button>
         <span>{{ error }}</span>
     </form>

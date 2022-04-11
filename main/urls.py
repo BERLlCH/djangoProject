@@ -10,5 +10,6 @@ urlpatterns = [
     path('login/main', views.index),
     path('ads', views.ads, name='ads'),
     path('newAd', views.newad, name='newad'),
-    path('myAds', views.myads, name='myads')
+    path('myAds', views.myads, name='myads'),
+    path('ad', views.ad, name='ad'),
 ]

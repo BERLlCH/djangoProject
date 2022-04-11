@@ -1,12 +1,15 @@
 {% extends 'main/base.html' %}
 {% load static %}
 {% block content %}
+        <h1 class="pagename">Мої оглошення</h1>
   {% for el in ads %}
       {% if el.user_id == userid %}
         <div class="container_car">
-            <div class="photo"><img class="img_car" src="{{ el.img.url }}" alt="no"></div>
+            <div class="photo">
+                <img class="img_car" src="{{ el.img.url }}" alt="no"></div>
                  <div class="info_car">
-                     <div class="header_car">{{ el.car_name }} {{ el.year }}</div>
+                     <div class="header_car"><a href="{% url 'ad' %}?id={{ el.id }}">{{ el.car_name }} {{ el.car_model }} {{ el.year }}</a>
+                     </div>
                      <div class="price">{{ el.price }}$</div>
                      <div class="car_data">
                             <ul class="table_car">
